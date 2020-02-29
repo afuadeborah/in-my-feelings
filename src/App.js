@@ -7,6 +7,7 @@ import DateForm from './components/DateForm';
 // import MoodContainer from './components/MoodContainer';
 import JournalEntry from './components/JournalEntry';
 import Albums from './components/Albums';
+// import moment from 'moment';
 
 
 
@@ -16,11 +17,13 @@ class App extends Component {
     super();
 
     this.state = {
-      showDate: "",
+      date: "",
+      time: "",
 
     }
   }
 
+  
 
   render (){
     return (
@@ -31,7 +34,8 @@ class App extends Component {
       
       <DateForm />
 
-      <JournalEntry />
+      <JournalEntry 
+      />
       
 
 

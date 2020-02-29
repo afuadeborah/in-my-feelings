@@ -1,16 +1,20 @@
 import React, { Component } from 'react';
+// import moment from 'moment';
 
 class JournalEntry extends Component {
     constructor(){
         super();
 
-        this.state = {};
+        this.state = {
+            date: "",
+            time: "",
+        };
     }
 
     render(){
         return (
             <div className="journal-entry">
-                <h3>Date/Time goes here.</h3>
+                <h3> in Toronto on {this.state.date}</h3>
 
 
                 <form className="journal-form" action='submit'>

@@ -55,6 +55,7 @@ textarea {
 }
 
 
+
 /* Heading */
 header {
   padding: 30px;
@@ -88,10 +89,8 @@ h2 {
 h3 {
   text-align: left;
   font-size: 3rem;
-  /* margin: 30px auto 30px 20px; */
+
 }
-
-
 
 button {
   background-color: #8D7400;
@@ -103,7 +102,6 @@ button {
   color: white;
   padding: 10px 30px;
   border-radius: 2px;
-
 }
 
 
@@ -136,7 +134,6 @@ button {
 
 .form-label {
   font-size: 2.7rem;
-  text-align: left;
 }
 
 .one-word {
@@ -148,7 +145,7 @@ button {
   border: 2px solid white;
   align-items: flex-start;
   margin-top: 20px;
-  padding: 30px;
+  padding: 30px 50px;
 }
 
 fieldset {
@@ -161,13 +158,11 @@ fieldset {
   width: 100%;
 }
 
-
 textarea {
   width: 100%;
   font-size: 2.1rem;
   line-height: 1.5;
   padding: 20px;
-  border-radius: 5px;
   background-color: black;
   border-bottom: 1px solid white;
   color:white;
@@ -211,17 +206,10 @@ textarea::placeholder {
 
 
 
-/* .App-header {
-  
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-} */
-
 
 
 
 /* OVO GOLD: 8D7400 */
+
+
+/* Tighten up form CSS, lots of repetition */
