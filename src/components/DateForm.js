@@ -1,6 +1,7 @@
 import React, { Component }  from 'react';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { faAngleDoubleDown } from '@fortawesome/free-solid-svg-icons';
+// import moment from 'moment';
+
+
 
 class DateForm extends Component {
 
@@ -9,7 +10,10 @@ class DateForm extends Component {
 
         this.state = {
             selectDate: "",
+            time: ""
         }
+
+        console.log(this);
     }
 
 
@@ -18,16 +22,22 @@ class DateForm extends Component {
   handleDate = (e) => {
     this.setState({
       selectDate: e.target.value,
-    })
-    console.log(e.target.value);
+      
     
+    })
+    console.log(e.target.value);    
 }
 
 
 
     render (){
+        // const time = moment().format("h:mm A");
+        // console.log(time);
+        
         return (
             <div className="date-entry">
+
+                
                 <form className="select-date">
 
                     <label htmlFor="date-select">Today is:</label>
@@ -40,9 +50,14 @@ class DateForm extends Component {
                         onChange = {this.handleDate}
                     />
 
-                    <button type="submit">Go</button>
+                    <button 
+                    type="submit"
+                    onClick={
+                        (e) => this.props.grabDate(e, this.state.selectDate)}
+                    >Go</button>
 
                 </form>
+
             </div>
         );
     }
@@ -56,3 +71,4 @@ export default DateForm;
 // make use of toDateString
 // https://tecadmin.net/get-current-date-time-javascript/
 // May not need this component if moment works
+// Save this in case but maybe change this to just a landing page with a picture/log in and save the date for the next page

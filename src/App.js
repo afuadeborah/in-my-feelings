@@ -4,10 +4,11 @@ import './App.css';
 // Custom Imports 
 import Header from './components/Header';
 import DateForm from './components/DateForm';
-// import MoodContainer from './components/MoodContainer';
 import JournalEntry from './components/JournalEntry';
 import Albums from './components/Albums';
-// import moment from 'moment';
+import moment from 'moment';
+
+
 
 
 
@@ -18,23 +19,33 @@ class App extends Component {
 
     this.state = {
       date: "",
-      time: "",
-
+     
     }
   }
 
-  
+  //Get Info from DateForm
+  printDate = (e, selectDate) => {
+    e.preventDefault();
+
+    console.log('you grabbed the date from journal entry');
+  }
+
 
   render (){
+    
     return (
 
     <div className="App wrapper">
       <Header />
 
       
-      <DateForm />
+      <DateForm  
+      grabDate={this.printDate}
+     
+      />
 
       <JournalEntry 
+       time={moment().format("h:mm A")} 
       />
       
 

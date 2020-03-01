@@ -1,31 +1,29 @@
 import React, { Component } from 'react';
-// import moment from 'moment';
 
 class JournalEntry extends Component {
-    constructor(){
-        super();
+  
+    
+ 
 
-        this.state = {
-            date: "",
-            time: "",
-        };
-    }
 
-    render(){
+
+render(){
+    
         return (
             <div className="journal-entry">
-                <h3> in Toronto on {this.state.date}</h3>
 
+                <h3><span>{this.props.time}</span> in Toronto</h3>
 
                 <form className="journal-form" action='submit'>
-                    <label htmlFor="form-label" className="form-label" >What's got you in your feelings? Write about it here</label>
+                <label htmlFor="form-label" className="form-label" >What's got you in your feelings? Write about it here</label>
+                    
                     <fieldset>
                         <textarea 
                         id="journal"
                         placeholder="Kiki, do you love me? Are you riding? Say you'll never ever leave from beside me, 'Cause I want ya, and I need ya, And I'm down for you always."
                         required
                         maxLength="40"
-                        rows="5"
+                        rows="4"
                         cols="50"
                         wrap="hard">
                         </textarea>
@@ -41,10 +39,10 @@ class JournalEntry extends Component {
                         <label htmlFor="one-word" className="one-word" >Name one thing that had you on your Worst Behaviour</label>
                         <input type="text" id="one-word" placeholder="Last night, I think I lost my patience." required></input>
                     </fieldset>
-
-                    <button type="submit">Know Yourself</button>
-
                 </form>
+
+                <button type="submit">Know Yourself</button>
+
             </div>
         );
     }
@@ -65,3 +63,5 @@ export default JournalEntry;
     // I'm grateful for
     // I'm a likkle cheesed about
     // Long talk 
+
+// Stop this from rendering until the button on main page has been clicked
