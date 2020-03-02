@@ -6,6 +6,8 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
 
 
 /* Default Styling */
+/* Font */
+
 
 html {
   font-size: 62.5%;
@@ -16,6 +18,7 @@ body {
   color: white;
   line-height: 1.6;
   font-size: 2rem;
+  /* font-family: 'Josefin Sans'; */
 }
 
 img {
@@ -77,7 +80,8 @@ h1,
 h2,
 h3,
 h4,
-label {
+label,
+button {
   font-family: 'Arial';
   font-weight: bold;
   text-transform: uppercase;
@@ -97,7 +101,6 @@ h2 {
 h3 {
   font-size: 2.5rem;
   text-align: left;
-  /* font-style: normal; */
   font-weight: lighter;
 }
 
@@ -248,10 +251,15 @@ textarea::placeholder {
   width: 100%;
 }
 
-/* input[type="radio"]{
-  opacity: 0;
-} */
+.mood-button:hover,
+.mood-button:focus {
+  transform: scale(1.1);
+}
 
+.mood-button:active {
+  background-color: #8D7400;
+  outline: 2px solid white;
+}
 
 /* Album Container */
 

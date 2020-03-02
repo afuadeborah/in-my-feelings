@@ -10,38 +10,38 @@ class DateForm extends Component {
 
         this.state = {
             selectDate: "",
-            time: ""
+            userSubmitDate: ""
+            // time: "",
+
         }
 
         console.log(this);
     }
 
 
-
 // Grab date from main page and extract the value
   handleDate = (e) => {
+    e.preventDefault();
     this.setState({
       selectDate: e.target.value,
       
     })
-    
-
     console.log(e.target.value);
-    
-    
+
 }
 
+// Print date to page
+   
 
 
     render (){
-        // const time = moment().format("h:mm A");
-        // console.log(time);
+ 
         
         return (
             <div className="date-entry">
 
                 
-                <form className="select-date">
+                <form className="select-date" >
 
                     <label htmlFor="date-select">Today is:</label>
 
@@ -50,18 +50,21 @@ class DateForm extends Component {
                         id="date-select" 
                         placeholder="MM-DD-YYYY" 
                         required
+                        value={this.state.selectDate}
                         onChange = {this.handleDate}
                         tabIndex="0"
                     />
 
-                    <button 
+                    {/* <button 
+                    onClick={this.handleDate}
                     type="submit"
                     tabIndex="0"
-                    onClick={
-                        (e) => this.props.grabDate(e, this.state.selectDate) }
-                    >Go</button>
+                    >Go</button> */}
 
                 </form>
+                {/* set a ternerary based on whether or date is on page in state */}
+                {this.state.selectDate ? <h3>{this.state.selectDate}</h3> : null }
+                    
 
             </div>
         );
