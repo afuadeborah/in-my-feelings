@@ -12,20 +12,15 @@ class MoodContainer extends Component {
           
             moods.map((mood, index) => {
                 return (
-                    <div className="mood-box" key={index}>
+                    <div className="mood-box" key={index} tabIndex="0">
 
-                        <label htmlFor={mood.mood}>{mood.mood}</label>
+                        <button className="mood-button">
 
-                        <input 
-                        type="radio" 
-                        id={mood.mood} 
-                        name="one-mood" 
-                        className="mood"
-                        value={mood.mood}
-                        >
-                        </input>
+                            {mood.mood}
 
-                        <p>{mood.sentence}</p>
+                            <p>{mood.sentence}</p>
+
+                        </button>
 
                     </div>
 
@@ -52,3 +47,13 @@ export default MoodContainer;
      // we allow the user to select one option and remove all the others 
                 // each box is the same but I want to pass in different values so  
                 // pass in different individual mood using prop
+
+{/* <input 
+                        type="radio" 
+                        id={mood.mood} 
+                        name="one-mood" 
+                        className="mood"
+                        value={mood.mood}
+                        required
+                        >
+                        </input>  */}

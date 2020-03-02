@@ -23,7 +23,7 @@ const moods = [
 
     {
         mood: "Angry",
-        sentence: "Not the time.",
+        sentence: "Not the time. No long talk.",
         image: "",
         // Scorpion
     },
@@ -37,7 +37,7 @@ const moods = [
 
     {
         mood: "Confident",
-        sentence: "You're in the building and you're feeling yourself.",
+        sentence: "You in the building and you're feeling yourself.",
         image: "",
         // Nothing Was the Same
     }

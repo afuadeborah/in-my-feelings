@@ -223,7 +223,7 @@ textarea::placeholder {
 
 /* Mood Container */
 .mood-entry {
-  border: 2px solid gold;
+  /* border: 2px solid gold; */
   margin-top: 70px;
 }
 
@@ -238,7 +238,19 @@ textarea::placeholder {
 
 .mood-box{
   flex: 1 0 calc(50% - 20px);
+  padding: 20px;
 }
+
+.mood-button {
+  background-color: black;
+  height: 150px;
+  border-radius: 6px;
+  width: 100%;
+}
+
+/* input[type="radio"]{
+  opacity: 0;
+} */
 
 
 /* Album Container */

@@ -44,7 +44,9 @@ render(){
                 </form>
 
                 <button 
-                type="submit">Know Yourself</button>
+                type="submit"
+                tabIndex="0"
+                >Know Yourself</button>
             </div>
         );
     }

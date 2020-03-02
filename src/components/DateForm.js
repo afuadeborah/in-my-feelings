@@ -51,10 +51,12 @@ class DateForm extends Component {
                         placeholder="MM-DD-YYYY" 
                         required
                         onChange = {this.handleDate}
+                        tabIndex="0"
                     />
 
                     <button 
                     type="submit"
+                    tabIndex="0"
                     onClick={
                         (e) => this.props.grabDate(e, this.state.selectDate) }
                     >Go</button>
