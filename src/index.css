@@ -32,6 +32,13 @@ form {
   padding: 0;
 }
 
+ul,
+li,
+a {
+  list-style: none;
+  text-decoration: none;
+}
+
 
 /* Main App.js Styling */
 .App {
@@ -113,7 +120,7 @@ button {
 
 
 /* Date Form */
-.date-entry,
+
 .mood-entry,
 .album-container {
   height: 100vh;
@@ -127,6 +134,10 @@ button {
   margin: 0 auto;
 }
 
+.date-entry {
+  height: 75vh;
+}
+
 .date-entry label {
   font-size: 3.6rem;
 }
@@ -136,24 +147,36 @@ button {
 /* Journal Entry */
 .journal-entry {
   height: 100vh;
-  max-width: 70%;
+  /* max-width: 70%; */
 }
 
 .form-label {
-  font-size: 2.7rem;
+  font-size: 2.5rem;
 }
 
 .one-word {
-  font-size: 2.3rem;
+  font-size: 2.1rem;
 }
 
 
 .journal-form {
   border: 3px solid white;
+  flex-direction: row;
   align-items: center;
+  justify-content: space-between;
   margin-top: 20px;
-  padding: 30px 50px;
   border-radius: 10px;
+}
+
+.journal,
+.reflection {
+  text-align: center;
+  flex: 1 0 50%;
+  padding: 50px 20px;
+}
+
+.journal {
+  border-right: 3px solid white;
 }
 
 fieldset {
@@ -162,27 +185,26 @@ fieldset {
   padding: 0;
   display: flex;
   flex-direction: column;
-  margin: 30px 0;
-  width: 80%;
+  margin: 15px 0;
 }
 
 textarea {
   width: 100%;
-  font-size: 2.1rem;
   line-height: 1.5;
   padding: 20px;
-  background-color: black;
+  background-color: lightgrey;
   border-bottom: 1px solid white;
-  color:white;
+  color:black;
+  border-radius: 5px;
 }
 
 input[type="text"]{
   border: none;
-  background-color: black;
+  background-color: lightgrey;
   border-bottom: 1px solid white;
-  color:white;
+  color:black;
   padding: 20px;
-  font-size: 2.1rem;
+  border-radius: 5px;
 }
 
 input::placeholder,
@@ -193,11 +215,31 @@ textarea::placeholder {
 .journal-entry button {
   align-self: center;
   margin-top: 30px;
-
 }
+
+
+
+
+
 /* Mood Container */
+.mood-entry {
+  border: 2px solid gold;
+  margin-top: 70px;
+}
 
 /* Mood */
+.mood-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+}
+
+.mood-box{
+  flex: 1 0 calc(50% - 20px);
+}
+
 
 /* Album Container */
 

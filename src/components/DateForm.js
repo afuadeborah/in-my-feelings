@@ -23,9 +23,12 @@ class DateForm extends Component {
     this.setState({
       selectDate: e.target.value,
       
-    
     })
-    console.log(e.target.value);    
+    
+
+    console.log(e.target.value);
+    
+    
 }
 
 
@@ -53,7 +56,7 @@ class DateForm extends Component {
                     <button 
                     type="submit"
                     onClick={
-                        (e) => this.props.grabDate(e, this.state.selectDate)}
+                        (e) => this.props.grabDate(e, this.state.selectDate) }
                     >Go</button>
 
                 </form>

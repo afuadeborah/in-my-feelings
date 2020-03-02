@@ -1,31 +1,38 @@
 import React, { Component } from 'react';
+import moods from '../data/moods';
 
 class MoodContainer extends Component {
-    constructor (){
-        super();
-
-        this.state = {};
-        // A select and removal event will occur here
-    }
-    
-//ComponentDidMount
+   
+    //ComponentDidMount
     // Select Handler
     // Removal Handler
 
     render(){
         return (
-            <div className="mood-entry">
-                <h2>Since we're in our feelings, choose a mood below.</h2>
-                <ul className="mood-container">
-                    {/* we allow the user to select one option and remove all the others */}
-                    {/* each box is the same but I want to pass in different values so  */}
-                    <li className="mood"></li>
-                    {/* pass in different individual mood using prop*/}
-                </ul>
+          
+            moods.map((mood, index) => {
+                return (
+                    <div className="mood-box" key={index}>
 
-            </div>
+                        <label htmlFor={mood.mood}>{mood.mood}</label>
 
-        );
+                        <input 
+                        type="radio" 
+                        id={mood.mood} 
+                        name="one-mood" 
+                        className="mood"
+                        value={mood.mood}
+                        >
+                        </input>
+
+                        <p>{mood.sentence}</p>
+
+                    </div>
+
+                );
+            })
+ 
+        )
     }
 }
 
@@ -42,3 +49,6 @@ export default MoodContainer;
     // Make the last one a randomizer?
 // A function that exists in App.js, takes info, and passes it back to App.js
     // A function from props
+     // we allow the user to select one option and remove all the others 
+                // each box is the same but I want to pass in different values so  
+                // pass in different individual mood using prop
