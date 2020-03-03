@@ -6,8 +6,6 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
 
 
 /* Default Styling */
-/* Font */
-
 
 html {
   font-size: 62.5%;
@@ -54,14 +52,37 @@ a {
   width: 90%;
 }
 
-form {
+form,
+fieldset,
+.result-box,
+.mood-button,
+.mood-container {
   display: flex;
+}
+
+form,
+fieldset,
+.result-box,
+.mood-button {
   flex-direction: column;
+}
+
+
+form,
+.result-box,
+.mood-button,
+.mood-container {
   align-items: center;
+}
+
+
+
+form {
   justify-content: space-evenly;
 }
 
-textarea {
+textarea,
+fieldset {
   border: none;
 }
 
@@ -101,7 +122,6 @@ h2 {
 h3 {
   font-size: 2.5rem;
   text-align: left;
-
 }
 
 span {
@@ -120,29 +140,49 @@ button {
   border-radius: 2px;
 }
 
+/* Header */
+/* .title-name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title-name img {
+  width: unset;
+  max-width: 100px;
+} */
 
 
-/* Date Form */
+
+/* Name Form */
 
 .mood-entry,
 .album-container {
   height: 100vh;
 }
 
-.select-date {
-  border: 9px solid #8D7400;
+.enter-info {
+  border: 6px solid #8D7400;
   border-radius: 10px;
   max-width: 60%;
   height: 40vh;
   margin: 0 auto;
 }
 
-.date-entry {
+.enter-info input {
+  text-align: center;
+}
+
+.name-entry {
   height: 75vh;
 }
 
-.date-entry label {
-  font-size: 3.6rem;
+.name-entry label {
+  font-size: 3.2rem;
+}
+
+.welcome {
+  text-align: center;
 }
 
 
@@ -165,7 +205,7 @@ button {
 .journal-form {
   border: 3px solid white;
   flex-direction: row;
-  align-items: center;
+  /* align-items: center; */
   justify-content: space-between;
   margin-top: 20px;
   border-radius: 10px;
@@ -186,28 +226,33 @@ fieldset {
   border: none;
   margin: 0;
   padding: 0;
-  display: flex;
-  flex-direction: column;
+  /* display: flex; */
+  /* flex-direction: column; */
   margin: 15px 0;
+}
+
+textarea,
+input[type="text"] {
+  background-color: whitesmoke;
+  border: 1px solid white;
+  color: black;
+  border-radius: 5px;
+
 }
 
 textarea {
   width: 100%;
   line-height: 1.5;
   padding: 20px;
-  background-color:black;
-  border: 1px solid white;
-  color: white;
-  border-radius: 5px;
 }
 
 input[type="text"]{
   /* border: none; */
-  background-color:black;
-  border: 1px solid white;
-  color: white;
-  padding: 20px;
-  border-radius: 5px;
+  /* background-color: whitesmoke; */
+  /* border: 1px solid white; */
+  /* color: black; */
+  padding: 15px;
+  /* border-radius: 5px; */
 }
 
 input::placeholder,
@@ -230,9 +275,9 @@ textarea::placeholder {
 
 /* Mood */
 .mood-container {
-  display: flex;
+  /* display: flex; */
   flex-wrap: wrap;
-  align-items: center;
+  /* align-items: center; */
   justify-content: center;
   height: 80vh;
 }
@@ -248,19 +293,20 @@ textarea::placeholder {
   border-radius: 6px;
   width: 100%;
   display: flex;
-  flex-direction: column; 
+  /* flex-direction: column; */
   justify-content: space-around;
-  align-items: center;
+  /* align-items: center; */
+  border-width: 4px;
 }
 
 .mood-button:hover,
 .mood-button:focus {
-  transform: scale(1.1);
+  transform: scale(1.05);
+  outline: 2px solid white;
 }
 
 .mood-button:active {
   background-color: #8D7400;
-  outline: 2px solid white;
 }
 
 br {
@@ -268,19 +314,26 @@ br {
 }
 
 /* Album Container */
+.album-container {
+  margin-top: 50px;
+}
 
 .result-box {
   border: 2px solid white;
-  height: 75vh;
+  height: 85vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  /* flex-direction: column; */
+  /* align-items: center; */
+}
+
+.result-box button {
+  margin: 30px auto;
 }
 
 img {
   width: unset;
   max-width: 100%;
-  /* margin: 0 auto; */
+
 }
 
 /* Albums */

@@ -20,7 +20,7 @@ render(){
                         <fieldset>
                             <textarea 
                             id="journal"
-                            placeholder="Kiki, do you love me? Are you riding? Say you'll never ever leave from beside me, 'Cause I want ya, and I need ya, And I'm down for you always."
+                            placeholder="You used to call me on my cell phone. Late night when you need my love."
                             required
                             maxLength="350"
                             rows="5"
@@ -61,11 +61,6 @@ render(){
 
 export default JournalEntry;
 
-// make the textarea smaller
-// add in a text inputs for a prompt
-    // One word to describe today
-    // I'm grateful for
-    // I'm a likkle cheesed about
-    // Long talk 
 
-// Stop this from rendering until the button on main page has been clicked
+
+// The button on this component I want to keep in order to refactor this app with firebase in the future. For now it is for display.

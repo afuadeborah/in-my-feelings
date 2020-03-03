@@ -3,11 +3,12 @@ import './App.css';
 
 // Custom Imports 
 import Header from './components/Header';
-import DateForm from './components/DateForm';
+// import IntroForm from './components/IntroForm';
 import JournalEntry from './components/JournalEntry';
 import MoodContainer from './components/MoodContainer';
 import axios from 'axios';
 import moment from 'moment';
+
 
 
 
@@ -17,10 +18,14 @@ class App extends Component {
     super();
 
     this.state = {
+
+      toggleUserInfo: true,
       
       albumInfo: [],
 
       result: [],
+
+      displayName: ""
 
     }
   }
@@ -90,6 +95,30 @@ class App extends Component {
     })
 }
 
+
+// Toggle display after form entry
+
+  handleName = (name) => {
+    const inputName = name.target.value;
+    
+    this.setState({
+    displayName: inputName,
+
+    })
+    console.log(inputName);
+
+  }
+
+
+  beginJournal = (e) => {
+    e.preventDefault();
+
+  
+}
+
+
+
+
 // Display album that corresponds with mood and set to state
 
  displayAlbumResult = (userSelectedMood) => {
@@ -102,14 +131,15 @@ class App extends Component {
      result: finalResult,
    })   
  }
- 
+
+
+  // Clear selected mood and choose another
   startOver = () => {
-
-
 
     this.setState({
       result: [],
     })
+
   }
 
 
@@ -123,11 +153,42 @@ class App extends Component {
       <Header />
 
       
-      <DateForm  />
+      <div className="name-entry">
 
+                
+        <form className="enter-info" >
+
+          <label htmlFor="enter-name">What's My Name?</label>
+
+          <input 
+              type="text" 
+              id="enter-name" 
+              placeholder="Kiki" 
+              value={this.state.displayName}
+              onChange = {this.handleName}
+              required
+              tabIndex="0"
+          />
+          
+
+          <button 
+          onClick={this.beginJournal}
+          type="submit"
+          tabIndex="0"
+          
+          >Go</button>
+
+        </form>
+
+        {this.state.displayName ? <h3 className="welcome">Welcome, {this.state.displayName}</h3> : null}
+
+      </div>
+
+      
       <JournalEntry 
        time={moment().format("h A")}
        date={moment().format("MMMM D")}
+
         
       />
       
@@ -136,6 +197,8 @@ class App extends Component {
         <div className="mood-container">
           <MoodContainer 
             childMood={this.displayAlbumResult}
+
+            
           />
         </div>
       </div>
@@ -143,16 +206,30 @@ class App extends Component {
 
       <div className="album-container">
 
-          {/* Go into state that we set with the new array and map over it  */}
           {this.state.result.map((album, index) => {
+
             return(
               <div key={index} className="result-box" >
-                  <h2>So you're feeling {album.albumMood}? Listen to</h2>
-                  <h3>{album.name}</h3>
-                  <img src={album.image[3]["#text"]} alt={`Cover of ${album.name}`}/>
+                    <h2>So you're feeling {album.albumMood}</h2>
+
+                    <h3>Click the cover to listen to {album.name}</h3>
+
+                    <a href={album.url} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    tabIndex="0"
+                    >
+                      <img src={album.image[3]["#text"]} 
+                      alt={`Cover of ${album.name} with a link to lastfm.com`}
+                      tabIndex="0"/>
+                    </a>
+
+                    <button
+                    onClick={this.startOver}
+                    >Start Over</button>
               </div>
             );
-
+            
           })}
 
       </div>
@@ -164,29 +241,8 @@ class App extends Component {
 
 export default App;
 
-
-// The constructor is a method that’s automatically called during the creation of an object from a class.
-// this used in constructor always refers to the constructor object and aLWAYS contains the props property
-
 // Credits
 // A big shoutout to the Gratitude Journal example by Alexandra Lim for a flow, and imports to help create this project
 
-
-
-
-
-
-  // Get Info from DateForm
-  // printDate = (e, selectDate) => {
-  //   e.preventDefault();
-    
-  //   console.log('you grabbed the date from journal entry');
-  //   console.log(selectDate);
-  // }
-
- 
-
-  //INFO
-//name: albumArray[index].name
-//image: albumArray[index].image[3]."#text"
-    // put this info into the image url
+// The constructor is a method that’s automatically called during the creation of an object from a class.
+// this used in constructor always refers to the constructor object and aLWAYS contains the props property

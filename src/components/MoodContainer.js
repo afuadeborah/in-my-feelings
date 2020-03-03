@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import moods from '../data/moods';
 
+
 class MoodContainer extends Component {
    
     constructor(){
@@ -8,8 +9,8 @@ class MoodContainer extends Component {
 
         this.state=({
             userMood: "",
-            toggleDisplay: true
-
+            toggleMoods: true,
+            dimButton: ''
         })
         
     }
@@ -17,19 +18,26 @@ class MoodContainer extends Component {
     getUserMood = (event) => {
 
         const chosenOne = event.target.value;
+        event.target.className = 'not-dimmed';
         
         this.props.childMood(chosenOne);
 
         this.setState({
             userMood: chosenOne,
-            toggleDisplay: !this.state.toggleDisplay,
-        
+            toggleMoods: !this.state.toggleMoods,
+            dimButton: this.state.dimButton ? '' : 'dim'
         })
     }
 
+
+
+
+
+    
+
   
     render(){
-        console.log(this.state.userMood);
+
         return (
           
             moods.map((mood, index) => {
@@ -40,11 +48,14 @@ class MoodContainer extends Component {
                     tabIndex="0" >
 
                         <button 
-                        className="mood-button"
+                        className={`mood-button ${this.state.dimButton}`}
                         value={mood.mood}
                         onClick={this.getUserMood}
-                        style={({opacity: this.state.toggleDisplay ? 1 : 0.5})}
+                        // style={({opacity: this.state.toggleMoods ? 1 : 0.4})}
+                        // add class and another one later in the cascade
+                        
                         >
+                            
 
                             {mood.mood} <br/>
                             {mood.sentence}
@@ -68,23 +79,3 @@ class MoodContainer extends Component {
 
 export default MoodContainer;
 
-// make mood a child of moodContainer
-// Display the moods after the entry is submitted
-// Make (Filter) a new array of just the albums I need
-// Get user input (they select a mood) save that to state
-
-// A function that exists in App.js, takes info, and passes it back to App.js
-    // A function from props
-     // we allow the user to select one option and remove all the others 
-                // each box is the same but I want to pass in different values so  
-                // pass in different individual mood using prop
-
-//<input 
-                        // type="radio" 
-                        // id={mood.mood} 
-                        // name="one-mood" 
-                        // className="mood"
-                        // value={mood.mood}
-                        // required
-                        // >
-                        // </input>  
