@@ -6,12 +6,8 @@ import Header from './components/Header';
 import DateForm from './components/DateForm';
 import JournalEntry from './components/JournalEntry';
 import MoodContainer from './components/MoodContainer';
-import Albums from './components/Albums';
 import axios from 'axios';
 import moment from 'moment';
-
-
-
 
 
 
@@ -21,14 +17,16 @@ class App extends Component {
     super();
 
     this.state = {
-      moods: ["Upset", "Happy", "Unsure", "Angry", "Romantic", "Confident"],
-
-      sentence: ["Getting right into dem feelings.", "Right now it's all good on your end.", "You're feeling a little anxious today.", "Not the time.", "Feelin the love, lovin the feeling.", "You're in the building and you're feeling yourself."],
-
+      
       albumInfo: [],
+
+      result: [],
 
     }
   }
+
+
+
 
   // Axios API Call
   componentDidMount (){
@@ -49,22 +47,71 @@ class App extends Component {
 // Manipulate information from the API call 
         const albumArray = response.data.topalbums.album
 
-        // Change the initial state 
-        this.setState({
-                albumInfo: albumArray,
-            })
+        const newAlbumArray = [...albumArray];
+
+
+// Grab the six albums I want to work with
+        const sixArray = newAlbumArray.slice(1,7);
+        // go into this and add on a mood porperty
+
+// Duplicate the original array and add the mood as a new object
+        const newSixArray = [...sixArray];
+
+          newSixArray.map((entry) => {
+            
+            if(entry.name === "Views"){
+              return entry.albumMood = "Happy";
+
+            } else if (entry.name === "Take Care"){
+              return entry.albumMood = "Upset";
+
+            } else if (entry.name === "Thank Me Later"){
+              return entry.albumMood = "Unsure";
+
+            } else if (entry.name === "Nothing Was the Same"){
+              return entry.albumMood = "Confident";
+
+            } else if (entry.name === "Scorpion"){
+              return entry.albumMood = "Angry";
+
+            } else if (entry.name === "More Life"){
+              return entry.albumMood = "Romantic";
+            }
+
+              return newSixArray;
+        });
+
+        console.log(newSixArray);
+       
         
-        console.log(albumArray);
+        this.setState({
+                albumInfo: newSixArray,
+            })
     })
 }
 
-// Get Info from DateForm
-  printDate = (e, selectDate) => {
-    e.preventDefault();
-    
-    console.log('you grabbed the date from journal entry');
-    console.log(selectDate);
+// Display album that corresponds with mood and set to state
+
+ displayAlbumResult = (userSelectedMood) => {
+   const finalResult = this.state.albumInfo.filter((album) => {
+    return album.albumMood === userSelectedMood;
+
+   })
+
+   this.setState({
+     result: finalResult,
+   })   
+ }
+ 
+  startOver = () => {
+
+
+
+    this.setState({
+      result: [],
+    })
   }
+
 
 
 
@@ -76,12 +123,11 @@ class App extends Component {
       <Header />
 
       
-      <DateForm  
-      grabDate={this.printDate}
-      />
+      <DateForm  />
 
       <JournalEntry 
        time={moment().format("h A")}
+       date={moment().format("MMMM D")}
         
       />
       
@@ -89,19 +135,27 @@ class App extends Component {
         <h2>Choose a mood below.</h2>
         <div className="mood-container">
           <MoodContainer 
+            childMood={this.displayAlbumResult}
           />
         </div>
       </div>
 
 
       <div className="album-container">
-        <h2>Listen to </h2>
 
-      <Albums />
+          {/* Go into state that we set with the new array and map over it  */}
+          {this.state.result.map((album, index) => {
+            return(
+              <div key={index} className="result-box" >
+                  <h2>So you're feeling {album.albumMood}? Listen to</h2>
+                  <h3>{album.name}</h3>
+                  <img src={album.image[3]["#text"]} alt={`Cover of ${album.name}`}/>
+              </div>
+            );
+
+          })}
 
       </div>
- 
-
     </div>
     );
   }
@@ -117,57 +171,22 @@ export default App;
 // Credits
 // A big shoutout to the Gratitude Journal example by Alexandra Lim for a flow, and imports to help create this project
 
-//  <div className="styleMood">
-//           {this.state.moods.map((oneMood, index) => {
-//             return (
 
-//               <MoodContainer
-//               moodName={oneMood}
-//               index={index}
-//               removeMood={this.chooseMood}
-//               />
-//             )
-//           })}
-//         </div> 
 
-// Select Mood from Screen
-  // chooseMood = (index) => {
+
+
+
+  // Get Info from DateForm
+  // printDate = (e, selectDate) => {
+  //   e.preventDefault();
     
-  //   const newMoods = [...this.state.moods];
-  //   const newSentence = [...this.state.sentence];
-
-  //   const updatedMoods = newMoods.filter((oneNewMood, i) => {
-  //     if (i !== index){
-  //       return true;
-  //     } else {
-  //       return false;
-  //     }
-  //   })
-
-  //   const updatedSentence = newSentence.filter((oneSentence, i) => {
-  //     if (i !== index){
-  //       return true;
-  //     } else {
-  //       return false;
-  //     }
-  //   })
-    
-  //   // If the index one newMood doesn't match the index(i) of updatedMoods return true, keep it in the old array and go on to the next park (index).
-
-  //   this.setState({
-  //     moods: updatedMoods,
-  //     sentence: updatedSentence
-  //   })
-  //   // Reset the state to an empty array
-
+  //   console.log('you grabbed the date from journal entry');
+  //   console.log(selectDate);
   // }
+
  
-  // To get mood values from MoodContainer component
-  
-  
-  // getMoodValue = (event, selectedMood) => {
-  //   event.preventDefault();
-  //   this.setState({
-  //     moods: event.target.value
-  //   })
-  // }
+
+  //INFO
+//name: albumArray[index].name
+//image: albumArray[index].image[3]."#text"
+    // put this info into the image url

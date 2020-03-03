@@ -21,16 +21,17 @@ class DateForm extends Component {
 
 // Grab date from main page and extract the value
   handleDate = (e) => {
-    e.preventDefault();
+    
     this.setState({
       selectDate: e.target.value,
       
     })
     console.log(e.target.value);
-
 }
 
-// Print date to page
+    
+
+
    
 
 
@@ -55,11 +56,11 @@ class DateForm extends Component {
                         tabIndex="0"
                     />
 
-                    {/* <button 
-                    onClick={this.handleDate}
+                    <button 
+                    onClick={this.printDate}
                     type="submit"
                     tabIndex="0"
-                    >Go</button> */}
+                    >Go</button>
 
                 </form>
                 {/* set a ternerary based on whether or date is on page in state */}

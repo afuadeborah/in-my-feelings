@@ -7,7 +7,9 @@ class MoodContainer extends Component {
         super();
 
         this.state=({
-            userMood: ""
+            userMood: "",
+            toggleDisplay: true
+
         })
         
     }
@@ -15,47 +17,53 @@ class MoodContainer extends Component {
     getUserMood = (event) => {
 
         const chosenOne = event.target.value;
+        
+        this.props.childMood(chosenOne);
 
         this.setState({
             userMood: chosenOne,
-        })
-       
+            toggleDisplay: !this.state.toggleDisplay,
         
+        })
     }
 
-    
-
+  
     render(){
         console.log(this.state.userMood);
         return (
           
             moods.map((mood, index) => {
                 return (
-                    <div className="mood-box" key={index} tabIndex="0">
+                    <div 
+                    className="mood-box" 
+                    key={index} 
+                    tabIndex="0" >
 
                         <button 
                         className="mood-button"
                         value={mood.mood}
                         onClick={this.getUserMood}
+                        style={({opacity: this.state.toggleDisplay ? 1 : 0.5})}
                         >
 
-                            {mood.mood}
-
+                            {mood.mood} <br/>
                             {mood.sentence}
 
                         </button>
-
+                
                     </div>
-
+                    
+                    
                 );
             })
- 
-        )
+
+            
+        );
     }
 }
 
 
-// THIS DISPLAYS UNDEFINED
+
 
 
 export default MoodContainer;
