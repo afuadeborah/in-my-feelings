@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "f30b2cf13a70b099a1bfc151dcdefc35",
+    "revision": "f4c0425b334d2ba7da6ccd4427d0f508",
     "url": "/afuadeborah/afua-frimpong-project-5/index.html"
   },
   {
