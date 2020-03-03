@@ -11,8 +11,6 @@ class IntroForm extends Component {
 
             selectDate: "",
 
-            toggleJournal: "true"
-
         }
 
  
@@ -28,7 +26,7 @@ class IntroForm extends Component {
 
     this.setState({
       selectDate: inputName,
-      toggleJournal: !this.state.toggleJournal
+      
       
     })
     console.log(inputName);

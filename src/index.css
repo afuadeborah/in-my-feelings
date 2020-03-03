@@ -190,7 +190,7 @@ button {
 /* Journal Entry */
 .journal-entry {
   height: 100vh;
-  /* max-width: 70%; */
+
 }
 
 .form-label {
@@ -205,7 +205,6 @@ button {
 .journal-form {
   border: 3px solid white;
   flex-direction: row;
-  /* align-items: center; */
   justify-content: space-between;
   margin-top: 20px;
   border-radius: 10px;
@@ -226,8 +225,7 @@ fieldset {
   border: none;
   margin: 0;
   padding: 0;
-  /* display: flex; */
-  /* flex-direction: column; */
+
   margin: 15px 0;
 }
 
@@ -242,22 +240,20 @@ input[type="text"] {
 
 textarea {
   width: 100%;
-  line-height: 1.5;
+  line-height: 1.2;
   padding: 20px;
 }
 
 input[type="text"]{
-  /* border: none; */
-  /* background-color: whitesmoke; */
-  /* border: 1px solid white; */
-  /* color: black; */
+
   padding: 15px;
-  /* border-radius: 5px; */
+
 }
 
 input::placeholder,
 textarea::placeholder {
   text-align: center;
+  letter-spacing: 1.1px;
 }
 
 .journal-entry button {
@@ -269,15 +265,12 @@ textarea::placeholder {
 
 /* Mood Container */
 .mood-entry {
-  /* border: 2px solid gold; */
   margin-top: 70px;
 }
 
 /* Mood */
 .mood-container {
-  /* display: flex; */
   flex-wrap: wrap;
-  /* align-items: center; */
   justify-content: center;
   height: 80vh;
 }
@@ -289,15 +282,12 @@ textarea::placeholder {
 
 .mood-button {
   background-color: black;
-  height: 150px;
   border-radius: 6px;
   width: 100%;
-  display: flex;
-  /* flex-direction: column; */
   justify-content: space-around;
-  /* align-items: center; */
   border-width: 4px;
 }
+/* move this styling to radio button */
 
 .mood-button:hover,
 .mood-button:focus {
@@ -313,6 +303,10 @@ br {
   margin-top: 10px;
 }
 
+input[type="radio"]{
+  visibility: hidden;
+}
+
 /* Album Container */
 .album-container {
   margin-top: 50px;
@@ -322,8 +316,7 @@ br {
   border: 2px solid white;
   height: 85vh;
   display: flex;
-  /* flex-direction: column; */
-  /* align-items: center; */
+
 }
 
 .result-box button {
@@ -336,7 +329,6 @@ img {
 
 }
 
-/* Albums */
 
 
 
