@@ -3,7 +3,6 @@ import './App.css';
 
 // Custom Imports 
 import Header from './components/Header';
-// import IntroForm from './components/IntroForm';
 import JournalEntry from './components/JournalEntry';
 import MoodContainer from './components/MoodContainer';
 import axios from 'axios';
@@ -18,8 +17,6 @@ class App extends Component {
     super();
 
     this.state = {
-
-      toggleUserInfo: true,
       
       albumInfo: [],
 
@@ -109,15 +106,12 @@ class App extends Component {
 
   }
 
-
+// Prevent page from reloading and resetting state when we click Go.
+// This button will be used to push information into Firebase for future rework
   beginJournal = (e) => {
     e.preventDefault();
-
-  
-}
-
-
-
+    
+  }
 
 // Display album that corresponds with mood and set to state
 
@@ -133,7 +127,7 @@ class App extends Component {
  }
 
 
-  // Clear selected mood and choose another
+// Clear selected mood and choose another
   startOver = () => {
 
     this.setState({
@@ -170,12 +164,10 @@ class App extends Component {
               tabIndex="0"
           />
           
-
           <button 
           onClick={this.beginJournal}
           type="submit"
           tabIndex="0"
-          
           >Go</button>
 
         </form>
@@ -187,18 +179,14 @@ class App extends Component {
       
       <JournalEntry 
        time={moment().format("h A")}
-       date={moment().format("MMMM D")}
-
-        
+       date={moment().format("MMMM D")} 
       />
       
       <div className="mood-entry">
         <h2>Choose a mood below.</h2>
         <div className="mood-container">
           <MoodContainer 
-            childMood={this.displayAlbumResult}
-
-            
+            childMood={this.displayAlbumResult}  
           />
         </div>
       </div>
@@ -206,37 +194,39 @@ class App extends Component {
 
       <div className="album-container">
 
-          {this.state.result.map((album, index) => {
+        {this.state.result.map((album, index) => {
 
-            return(
-              <div key={index} className="result-box" >
-                    <h2>So you're feeling {album.albumMood}</h2>
+          return (
+            <div 
+            key={index} 
+            className="result-box" >
+              <h2>So you're feeling {album.albumMood}</h2>
 
-                    <h3>Click the cover to listen to {album.name}</h3>
+              <h3>Click the cover to listen to {album.name}</h3>
 
-                    <a href={album.url} 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    tabIndex="0"
-                    >
-                      <img src={album.image[3]["#text"]} 
-                      alt={`Cover of ${album.name} with a link to lastfm.com`}
-                      tabIndex="0"/>
-                    </a>
+              <a href={album.url} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                tabIndex="0"
+              >
+                <img src={album.image[3]["#text"]} 
+                  alt={`Cover of ${album.name} with a link to lastfm.com`}
+                  tabIndex="0"/>
+              </a>
 
-                    <button
-                    onClick={this.startOver}
-                    >Start Over</button>
-              </div>
-            );
-            
-          })}
+              <button
+              onClick={this.startOver}
+              >Start Over</button>
+            </div>
+          );
+        })}
 
       </div>
+
     </div>
+
     );
-  }
-  
+  } 
 }
 
 export default App;
@@ -244,5 +234,4 @@ export default App;
 // Credits
 // A big shoutout to the Gratitude Journal example by Alexandra Lim for a flow, and imports to help create this project
 
-// The constructor is a method that’s automatically called during the creation of an object from a class.
-// this used in constructor always refers to the constructor object and aLWAYS contains the props property
+

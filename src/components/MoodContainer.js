@@ -9,8 +9,8 @@ class MoodContainer extends Component {
 
         this.state=({
             userMood: "",
-            toggleMoods: true,
-            dimButton: ''
+
+            checked: false
         })
         
     }
@@ -18,26 +18,25 @@ class MoodContainer extends Component {
     getUserMood = (event) => {
 
         const chosenOne = event.target.value;
-        event.target.className = 'not-dimmed';
+
         
         this.props.childMood(chosenOne);
 
         this.setState({
             userMood: chosenOne,
-            toggleMoods: !this.state.toggleMoods,
-            dimButton: this.state.dimButton ? '' : 'dim'
+            checked: !this.state.checked
         })
+
+        // if(!this.state.checked && )
+        
     }
 
-
-
-
-
-    
-
+    componentDidUpdate(){
+      
+    }
   
     render(){
-
+        
         return (
           
             moods.map((mood, index) => {
@@ -45,15 +44,17 @@ class MoodContainer extends Component {
                     <div 
                     className="mood-box" 
                     key={index} 
-                    tabIndex="0" >
-
+                    tabIndex="0"
+                    
+                    >
+                        
                         <label
                         htmlFor={`moods${index}`}
                         >
                             {mood.mood} <br/>
-                            {mood.sentence}
+                            <p>{mood.sentence}</p>
                         </label>
-
+                            <br/>
                         <input  
                         type="radio"
                         className="mood-button"
@@ -67,11 +68,8 @@ class MoodContainer extends Component {
                 
                     </div>
                     
-                    
                 );
-            })
-
-            
+            })    
         );
     }
 }
