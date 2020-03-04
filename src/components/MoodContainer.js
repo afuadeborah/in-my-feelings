@@ -44,6 +44,7 @@ class MoodContainer extends Component {
                     <div 
                     className="mood-box" 
                     key={index} 
+                    onClick={this.getUserMood}
                     tabIndex="0"
                     
                     >
@@ -61,7 +62,7 @@ class MoodContainer extends Component {
                         id={`moods${index}`}
                         value={mood.mood}
                         name="pickMood"
-                        onClick={this.getUserMood}
+                        
                         
                         >
                         </input>

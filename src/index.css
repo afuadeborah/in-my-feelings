@@ -34,7 +34,8 @@ h1,
 h2,
 p,
 button,
-form {
+form,
+fieldset {
   margin: 0;
   padding: 0;
 }
@@ -52,7 +53,8 @@ a {
 .enter-info input,
 .welcome,
 input::placeholder,
-textarea::placeholder  {
+textarea::placeholder,
+.result-box h3  {
   text-align: center;
 }
 
@@ -65,7 +67,6 @@ textarea::placeholder  {
   max-width: 1100px;
   width: 90%;
 }
-
 
 form,
 fieldset,
@@ -89,8 +90,6 @@ form,
   align-items: center;
 }
 
-
-
 form {
   justify-content: space-evenly;
 }
@@ -105,7 +104,6 @@ fieldset {
 /* Heading */
 header {
   padding: 30px;
-  /* text-align: center; */
   height: 30vh;
   margin-bottom: 20px;
 }
@@ -133,25 +131,27 @@ h2 {
   margin: 20px auto;
 }
 
-h3 {
+h3,
+.form-label {
+  
   font-size: 2.5rem;
+}
+
+h3 {
   text-align: left;
 }
 
-span {
-  font-style: italic;
+.enter-info,
+button {
+  
+  border-radius: 2px;
 }
 
 button {
   background-color: #8D7400;
   border: 2px solid #8D7400;
-  font-size: 2rem;
-  text-transform: uppercase;
-  font-weight: bold;
-  font-style: italic;
   color: white;
   padding: 10px 30px;
-  border-radius: 2px;
 }
 
 /* Header */
@@ -171,19 +171,15 @@ button {
 /* Name Form */
 
 .mood-entry,
-.album-container {
+.album-container,
+.journal-entry {
   height: 100vh;
 }
 
 .enter-info {
-  border: 6px solid #8D7400;
-  border-radius: 10px;
   max-width: 60%;
   height: 40vh;
-}
-
-.enter-info input {
-  text-align: center;
+  background-color:#181818;
 }
 
 .name-entry {
@@ -191,22 +187,16 @@ button {
 }
 
 .name-entry label {
-  font-size: 3.2rem;
+  font-size: 2.6rem;
 }
 
 .welcome {
-  font-size: 3rem;
   padding: 30px;
 }
 
 
 
 /* Journal Entry */
-.journal-entry {
-  height: 100vh;
-
-}
-
 .form-label {
   font-size: 2.5rem;
 }
@@ -214,7 +204,6 @@ button {
 .one-word {
   font-size: 2.1rem;
 }
-
 
 .journal-form {
   border: 3px solid white;
@@ -226,7 +215,6 @@ button {
 
 .journal,
 .reflection {
-  /* text-align: center; */
   flex: 1 0 50%;
   padding: 50px 20px;
 }
@@ -236,10 +224,6 @@ button {
 }
 
 fieldset {
-  border: none;
-  margin: 0;
-  padding: 0;
-
   margin: 15px 0;
 }
 
@@ -252,21 +236,23 @@ input[type="text"] {
 
 }
 
-textarea {
-  /* width: 100%; */
-  line-height: 1.2;
+textarea,
+.mood-box {
   padding: 20px;
+
+}
+
+textarea {
+  line-height: 1.2;
 }
 
 input[type="text"]{
-
-  padding: 15px;
+  padding: 12px;
 
 }
 
 input::placeholder,
 textarea::placeholder {
-  /* text-align: center; */
   letter-spacing: 1.1px;
 }
 
@@ -278,7 +264,8 @@ textarea::placeholder {
 
 
 /* Mood Container */
-.mood-entry {
+.mood-entry,
+.album-container {
   margin-top: 70px;
 }
 
@@ -291,18 +278,15 @@ textarea::placeholder {
 
 .mood-box{
   flex:0 0 calc(50% - 20px);
-  padding: 20px;
   border-radius: 6px;
   height: 30%;
   border: 4px solid #8D7400;
- 
+
 }
 
 .mood-box p {
   font-size: 1.8rem;
 }
-
-
 
 .mood-box:hover,
 .mood-box:focus {
@@ -322,12 +306,9 @@ textarea::placeholder {
   margin-top: 10px;
 }
 
-
 input[type="radio"]{
   visibility: hidden;
 }
-
-
 
 
 /* Album Container */
@@ -336,17 +317,17 @@ input[type="radio"]{
 }
 
 .result-box {
-  border: 2px solid white;
+  /* border: 2px solid white; */
   height: 85vh;
-  display: flex;
-
+  background-color: #181818;
 }
 
 .result-box button {
   margin: 30px auto;
 }
 
-img {
+
+.result-box img {
   width: unset;
   max-width: 100%;
 }

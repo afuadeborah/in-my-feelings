@@ -12,7 +12,7 @@ render(){
         return (
             <div className="journal-entry">
 
-        <h3><span>{this.props.time}</span> in Toronto on {this.props.date}</h3>
+        <h3>{this.props.time} in Toronto on {this.props.date}</h3>
 
                 <form className="journal-form" action='submit'>
                     <div className="journal">
