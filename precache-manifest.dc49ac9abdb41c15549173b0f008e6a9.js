@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "df3b8fd8972fb8db3863ad74ae57c1c5",
+    "revision": "d205a2ee42c58db400c77605bac35174",
     "url": "/afua-frimpong-project-5/index.html"
   },
   {
-    "revision": "e7d58b7693b37ef3e50f",
-    "url": "/afua-frimpong-project-5/static/css/main.cd8b2259.chunk.css"
+    "revision": "4d2cb9e7bd913bfbf67e",
+    "url": "/afua-frimpong-project-5/static/css/main.a7ee1b52.chunk.css"
   },
   {
     "revision": "eb550d1c9a33e88b6f55",
@@ -16,7 +16,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/afua-frimpong-project-5/static/js/2.5e26967d.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "e7d58b7693b37ef3e50f",
+    "revision": "4d2cb9e7bd913bfbf67e",
     "url": "/afua-frimpong-project-5/static/js/main.4d2f7f8f.chunk.js"
   },
   {

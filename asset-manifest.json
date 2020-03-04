@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/afua-frimpong-project-5/static/css/main.cd8b2259.chunk.css",
+    "main.css": "/afua-frimpong-project-5/static/css/main.a7ee1b52.chunk.css",
     "main.js": "/afua-frimpong-project-5/static/js/main.4d2f7f8f.chunk.js",
     "main.js.map": "/afua-frimpong-project-5/static/js/main.4d2f7f8f.chunk.js.map",
     "runtime-main.js": "/afua-frimpong-project-5/static/js/runtime-main.775b8ae5.js",
@@ -8,15 +8,15 @@
     "static/js/2.5e26967d.chunk.js": "/afua-frimpong-project-5/static/js/2.5e26967d.chunk.js",
     "static/js/2.5e26967d.chunk.js.map": "/afua-frimpong-project-5/static/js/2.5e26967d.chunk.js.map",
     "index.html": "/afua-frimpong-project-5/index.html",
-    "precache-manifest.fbcd2f36b37c2780a5ea4568a5b2849a.js": "/afua-frimpong-project-5/precache-manifest.fbcd2f36b37c2780a5ea4568a5b2849a.js",
+    "precache-manifest.dc49ac9abdb41c15549173b0f008e6a9.js": "/afua-frimpong-project-5/precache-manifest.dc49ac9abdb41c15549173b0f008e6a9.js",
     "service-worker.js": "/afua-frimpong-project-5/service-worker.js",
-    "static/css/main.cd8b2259.chunk.css.map": "/afua-frimpong-project-5/static/css/main.cd8b2259.chunk.css.map",
+    "static/css/main.a7ee1b52.chunk.css.map": "/afua-frimpong-project-5/static/css/main.a7ee1b52.chunk.css.map",
     "static/js/2.5e26967d.chunk.js.LICENSE.txt": "/afua-frimpong-project-5/static/js/2.5e26967d.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.775b8ae5.js",
     "static/js/2.5e26967d.chunk.js",
-    "static/css/main.cd8b2259.chunk.css",
+    "static/css/main.a7ee1b52.chunk.css",
     "static/js/main.4d2f7f8f.chunk.js"
   ]
 }
