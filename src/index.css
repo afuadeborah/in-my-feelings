@@ -496,6 +496,10 @@ svg {
     font-size: 3.2vw;
   }
 
+  .reflection input {
+    letter-spacing: 1px;
+  }
+
   .result-box {
     height: 90%;
     background-color: black;

@@ -38,7 +38,7 @@ class App extends Component {
     const apiKey = 'a0b4a2a68217ad3b52fe53e7b7ba0679';
 
     axios({
-        url: 'http://ws.audioscrobbler.com/2.0/',
+        url: 'https://ws.audioscrobbler.com/2.0/',
         method: 'GET',
         responseType: 'json',
         params: {
