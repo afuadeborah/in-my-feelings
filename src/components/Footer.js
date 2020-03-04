@@ -25,6 +25,9 @@ const Footer = () => {
             target="_blank" 
             rel="noopener noreferrer" 
             tabIndex="0"
+            aria-hidden="true"
+            title= "@afuadeborah on Github"
+            alt="Go to afuadeborah on Github"
             >
                 <FaGithub />
             </a>
@@ -33,6 +36,9 @@ const Footer = () => {
             target="_blank" 
             rel="noopener noreferrer" 
             tabIndex="0"
+            aria-hidden="true"
+            title="@afuadeborah_ on Twitter"
+            alt="Go to afuadeborah on Twitter"
             >
                 <FaTwitter />
             </a>

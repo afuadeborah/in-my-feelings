@@ -8,7 +8,7 @@ import MoodContainer from './components/MoodContainer';
 import Footer from './components/Footer';
 import axios from 'axios';
 import moment from 'moment';
-import moods from './data/moods';
+
 
 
 
@@ -85,9 +85,6 @@ class App extends Component {
 
               return newSixArray;
         });
-
-        console.log(newSixArray);
-       
         
         this.setState({
                 albumInfo: newSixArray,
@@ -105,7 +102,6 @@ class App extends Component {
     displayName: inputName,
 
     })
-    console.log(inputName);
 
   }
 
@@ -214,6 +210,7 @@ class App extends Component {
                   
                 <img src={album.image[3]["#text"]} 
                   alt={`Cover of ${album.name} with a link to lastfm.com`}
+                  title={`Play ${album.name} on Lastfm.com`}
                   tabIndex="0"/>
               </a>
 

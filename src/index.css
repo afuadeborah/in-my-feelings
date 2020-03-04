@@ -116,7 +116,6 @@ header {
 h1,
 h2,
 h3,
-h4,
 label,
 button {
   font-family: 'Arial';
@@ -124,6 +123,7 @@ button {
   text-transform: uppercase;
   font-style: italic;
 }
+
 
 h1 {
   font-size: 5.2rem;
@@ -158,18 +158,9 @@ button {
   padding: 10px 30px;
 }
 
-/* Header */
-/* .title-name {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+button:hover {
+  transform: scale(1.1);
 }
-
-.title-name img {
-  width: unset;
-  max-width: 100px;
-} */
-
 
 
 /* Name Form */
@@ -216,6 +207,7 @@ button {
   border-radius: 5px;
   padding: 0 20px;
 }
+
 .journal,
 .reflection,
 .mood-box {
@@ -255,23 +247,28 @@ textarea {
 
 input[type="text"]{
   padding: 12px;
+}
 
+.enter-info input:focus,
+fieldset input:focus,
+fieldset textarea:focus {
+  outline: 5px solid #8D7400;
 }
 
 input::placeholder,
 textarea::placeholder {
   letter-spacing: 1.1px;
+  font-size: 1.9rem;
 }
 
 .journal-entry button {
-  align-self: center;
-  margin-top: 30px;
+  margin: 40px auto;
 }
 
 
 
 /* Mood Container */
-.mood-entry,
+
 .album-container {
   margin-top: 70px;
 }
@@ -285,7 +282,11 @@ textarea::placeholder {
   height: 80vh;
 }
 
-.mood-box{
+.mood-entry {
+  margin-top: 150px;
+}
+
+.mood-box {
   border-radius: 6px;
   height: 30%;
   border: 4px solid #8D7400;
@@ -341,6 +342,7 @@ input[type="radio"]{
 /* Footer */
 footer {
   justify-content: center;
+  font-style: italic;
 }
 
 footer a {
@@ -359,22 +361,146 @@ svg {
 }
 
 
+/* Media Queries */
+
+@media (max-width: 1030px){
+    header {
+      padding: 35px;
+    }
+
+    .journal-form {
+      flex-direction: column;
+    }
+
+    textarea {
+      max-width: 80%;
+      align-self: center;
+    }
+
+    .mood-entry,
+    .album-container,
+    .journal-entry {
+      height: 100%;
+  }
+
+  .album-container {
+    margin: 50px;
+  }
+}
 
 
+@media (max-width: 850px){
+
+  .journal-entry h3 {
+    text-align: center;
+  }
+
+  .result-box h3 {
+    font-size: 2.1rem;
+  }
+
+  .album-container {
+    margin-bottom: 80px auto;
+  }
+
+  footer {
+    margin-top: 80px;
+    font-size: 1.8rem;
+  }
+
+}
 
 
+@media (max-width: 695px){
+  header h2 {
+    font-size: 2.3rem;
+  }
+
+  .enter-info {
+    max-width: 80%;
+  }
+
+  .mood-entry {
+    margin-bottom: 100px;
+  }
+
+  .mood-box {
+    height: 25%;
+  }
+
+  .mood-box label {
+    font-size: 1.7rem;
+  }
+
+  .mood-box label p {
+    font-size: 1.5rem;
+  }
 
 
+  .album-container {
+    margin: 30px;
+  }
+}
 
 
+@media (max-width: 630px){
+  .mood-container {
+    height: 100%;
+  }
+
+  .mood-box {
+    flex-basis: calc(80% - 20px);
+    height: 20%;
+  }
+
+  .mood-box br,
+  .mood-box p {
+    display: none;
+  }
+}
 
 
+@media (max-width: 580px){
+  h1 {
+    font-size: 7.6vw;
+  }
 
+  button {
+    padding: 5px 20px;
+  }
 
+  header h2 {
+    font-size: 5vw;
+  }
 
+  input[type="text"] {
+    padding: 5px;
+  }
 
+  .name-entry label {
+    font-size: 2.2rem;
+  }
 
-/* OVO GOLD: 8D7400 */
-/* FORM BACKGROUND: 303030 */
+  textarea {
+    min-width: 100%;
+  }
 
+  .journal,
+  .reflection {
+    padding: 20px;
+  }
 
+  .reflection input::placeholder {
+    font-size: 3.2vw;
+  }
+
+  .result-box {
+    height: 90%;
+    background-color: black;
+  }
+
+  footer{
+    margin-top: 60px;
+    font-size: 2.8vw;
+  }
+}
