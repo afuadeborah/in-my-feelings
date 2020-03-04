@@ -5,8 +5,11 @@ import './App.css';
 import Header from './components/Header';
 import JournalEntry from './components/JournalEntry';
 import MoodContainer from './components/MoodContainer';
+import Footer from './components/Footer';
 import axios from 'axios';
 import moment from 'moment';
+import moods from './data/moods';
+
 
 
 
@@ -207,8 +210,8 @@ class App extends Component {
               <a href={album.url} 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                tabIndex="0"
-              >
+                tabIndex="0">
+                  
                 <img src={album.image[3]["#text"]} 
                   alt={`Cover of ${album.name} with a link to lastfm.com`}
                   tabIndex="0"/>
@@ -217,13 +220,21 @@ class App extends Component {
               <button
               onClick={this.startOver}
               >Start Over</button>
+
             </div>
+
           );
         })}
 
+        
+
       </div>
 
+      <Footer />
+
     </div>
+    // .App Scope Ends 
+  
 
     );
   } 

@@ -27,7 +27,6 @@ class MoodContainer extends Component {
             checked: !this.state.checked
         })
 
-        // if(!this.state.checked && )
         
     }
 
@@ -50,21 +49,21 @@ class MoodContainer extends Component {
                     >
                         
                         <label
-                        htmlFor={`moods${index}`}
-                        >
+                        htmlFor={`moods${index}`}>
+
                             {mood.mood} <br/>
                             <p>{mood.sentence}</p>
+                            
                         </label>
+
                             <br/>
+
                         <input  
                         type="radio"
                         className="mood-button"
                         id={`moods${index}`}
                         value={mood.mood}
-                        name="pickMood"
-                        
-                        
-                        >
+                        name="pickMood">
                         </input>
                 
                     </div>
@@ -82,30 +81,4 @@ class MoodContainer extends Component {
 export default MoodContainer;
 
 
-
-// <div 
-//                     className="mood-box" 
-//                     key={index} 
-//                     tabIndex="0" >
-
-//                         <button 
-//                         className={`mood-button ${this.state.dimButton}`}
-//                         value={mood.mood}
-//                         onClick={this.getUserMood}
-//                         // style={({opacity: this.state.toggleMoods ? 1 : 0.4})}
-//                         // add class and another one later in the cascade
-                        
-//                         >
-                            
-
-//                             {mood.mood} <br/>
-//                             {mood.sentence}
-
-//                         </button>
-                
-//                     </div>
-
-// don't put label inside input
-//match ids in order to access selections
-//${this.state.dimButton}ß
 
