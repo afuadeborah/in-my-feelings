@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/afua-frimpong-project-5/precache-manifest.431e3333697c02e8eb6ffb0c13fd042e.js"
+  "/afua-frimpong-project-5/precache-manifest.dfd3aad6d36f98551f0c01fb3a7c93a6.js"
 );
 
 self.addEventListener('message', (event) => {
