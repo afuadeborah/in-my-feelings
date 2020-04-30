@@ -2,7 +2,33 @@ import React, { Component } from 'react';
 
 class JournalEntry extends Component {
   
+    constructor (){
+        super();
+
+        this.state = {
+            journalInput: '',
+
+        }
+    }
+
+    handleJournal = (event) => {
+
+        const writingInput = event.target.value;
     
+        
+        this.setState({
+            journalInput: writingInput,
+
+        })
+        
+        this.props.submitJournal(writingInput);
+        console.log(writingInput);
+        
+    }
+
+    saveLocal = (event) => {
+        this.props.pushLocal(event);
+    }
  
 
 
@@ -14,7 +40,9 @@ render(){
 
                 <h3>{this.props.time} in Toronto on {this.props.date}</h3>
 
-                <form className="journal-form" action='submit'>
+                <form 
+                className="journal-form" 
+                action='submit'>
 
                     <div className="journal">
 
@@ -27,6 +55,8 @@ render(){
 
                             <textarea 
                             id="journal"
+                            value={this.state.JournalInput}
+                            onChange={this.handleJournal}
                             placeholder="You used to call me on my cell phone. Late night when you need my love."
                             required
                             maxLength="350"
@@ -39,7 +69,7 @@ render(){
 
                     </div>
 
-                    <div className="reflection">
+                    {/* <div className="reflection">
 
                         <fieldset className="good">
 
@@ -52,12 +82,15 @@ render(){
                             type="text" 
                             id="one-word" 
                             placeholder="I ran through the 6 with my woes."
+                            value={this.state.good}
+                            onChange={this.handleJournal}
                             required>
+                          
                             </input>
 
-                        </fieldset>
+                        </fieldset> */}
 
-                        <fieldset className="bad">
+                        {/* <fieldset className="bad">
 
                             <label 
                             htmlFor="one-word" className="one-word" >
@@ -67,18 +100,22 @@ render(){
                             type="text" 
                             id="one-word" 
                             placeholder="Last night, I think I lost my patience." 
+                            value={this.state.bad}
+                            onChange={this.handleJournal}
                             required>
+                            
                             </input>
 
                         </fieldset>
 
-                    </div>
+                    </div> */}
 
                 </form>
 
                 <button 
                 type="submit"
                 tabIndex="0"
+                onClick={this.saveLocal}
                 >Know Yourself
                 </button>
             </div>

@@ -16,7 +16,6 @@ body {
   color: white;
   line-height: 1.6;
   font-size: 2rem;
-  /* font-family: 'Josefin Sans'; */
 }
 
 img {
@@ -169,7 +168,7 @@ button:hover {
 .mood-entry,
 .album-container,
 .journal-entry {
-  height: 100vh;
+  min-height: 100%;
 }
 
 .enter-info {
@@ -244,6 +243,7 @@ textarea,
 
 textarea {
   line-height: 1.3;
+  resize: none;
 }
 
 input[type="text"]{
@@ -374,8 +374,10 @@ svg {
       flex-direction: column;
     }
 
-    textarea {
-      max-width: 80%;
+    textarea,
+    .good input[type="text"],
+    .bad input[type="text"] {
+      width: 100%;
       align-self: center;
     }
 
@@ -508,5 +510,11 @@ svg {
   footer{
     margin-top: 60px;
     font-size: 2.8vw;
+  }
+}
+
+@media (max-width: 400px) {
+  footer p {
+    font-size: 2.6vw;
   }
 }

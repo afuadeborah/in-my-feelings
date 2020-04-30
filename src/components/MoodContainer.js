@@ -30,9 +30,6 @@ class MoodContainer extends Component {
         
     }
 
-    componentDidUpdate(){
-      
-    }
   
     render(){
         
@@ -44,9 +41,7 @@ class MoodContainer extends Component {
                     className="mood-box" 
                     key={index} 
                     onClick={this.getUserMood}
-                    tabIndex="0"
-                    
-                    >
+                    tabIndex="0">
                         
                         <label
                         htmlFor={`moods${index}`}>

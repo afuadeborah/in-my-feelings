@@ -16,8 +16,9 @@ const Footer = () => {
                 tabIndex="0"
                 >Afua Deborah
                 </a> 
-                Juno College 2020 
             </p>
+            
+            <p>Juno College 2020 </p>
 
             <p>Hotline Bling:</p>
 
