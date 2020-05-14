@@ -98,7 +98,8 @@ form,
 }
 
 textarea,
-fieldset {
+fieldset,
+button {
   border: none;
 }
 
@@ -152,7 +153,6 @@ button {
 
 button {
   background-color: #8D7400;
-  border: 2px solid #8D7400;
   color: white;
   padding: 10px 30px;
   cursor: pointer;
@@ -208,8 +208,7 @@ button:hover {
   padding: 0 20px;
 }
 
-.journal,
-.reflection,
+
 .mood-box {
   flex: 0 0 calc(50% - 20px);
 
