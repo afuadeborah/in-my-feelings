@@ -69,46 +69,6 @@ render(){
 
                     </div>
 
-                    {/* <div className="reflection">
-
-                        <fieldset className="good">
-
-                            <label 
-                            htmlFor="one-word" className="one-word">
-                                Name something Too Good that happened today
-                            </label>
-
-                            <input 
-                            type="text" 
-                            id="one-word" 
-                            placeholder="I ran through the 6 with my woes."
-                            value={this.state.good}
-                            onChange={this.handleJournal}
-                            required>
-                          
-                            </input>
-
-                        </fieldset> */}
-
-                        {/* <fieldset className="bad">
-
-                            <label 
-                            htmlFor="one-word" className="one-word" >
-                                Name one thing that had you on your Worst Behaviour
-                            </label>
-                            <input 
-                            type="text" 
-                            id="one-word" 
-                            placeholder="Last night, I think I lost my patience." 
-                            value={this.state.bad}
-                            onChange={this.handleJournal}
-                            required>
-                            
-                            </input>
-
-                        </fieldset>
-
-                    </div> */}
 
                 </form>
 

@@ -205,21 +205,20 @@ class App extends Component {
     this.setState({
       result: finalResult,
     });
-    
-    console.log(finalResult);
+
   
 
     // To update Firebase
-    const moodAlbum = finalResult[0].name;
-    const chosenMood = finalResult[0].albumMood;
+    // const moodAlbum = finalResult[0].name;
+    // const chosenMood = finalResult[0].albumMood;
 
     
-    const dbRef = firebase.database().ref("Users/" + this.state.displayName);
+    // const dbRef = firebase.database().ref("Users/" + this.state.displayName);
 
-    dbRef.update({ 
-      albumOfDay: moodAlbum,
-      mood: chosenMood
-    });
+    // dbRef.update({ 
+    //   albumOfDay: moodAlbum,
+    //   mood: chosenMood
+    // });
     
     
   }
